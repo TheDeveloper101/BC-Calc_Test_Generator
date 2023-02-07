@@ -11,26 +11,17 @@ def generate_header(title):
         header.append("Name: ")
     # Create center header
     with header.create(Head("C")):
-        header.append("Date:")
+        header.append("Date: ")
     # Create right header
     with header.create(Head("R")):
-        header.append("Period:")
-    # Create left footer
-    with header.create(Foot("L")):
-        header.append("Left Footer")
-    # Create center footer
-    with header.create(Foot("C")):
-        header.append("Center Footer")
-    # Create right footer
-    with header.create(Foot("R")):
-        header.append("Right Footer")
+        header.append("Period: ")
 
     doc.preamble.append(header)
     doc.change_document_style("header")
 
     # Add Heading
     with doc.create(MiniPage(align='c')):
-        doc.append(LargeText(bold(title)))
+        doc.append(LargeText(title))
         doc.append(LineBreak())
 
 print("Enter the title of the test: ")
